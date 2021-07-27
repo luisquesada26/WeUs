@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeUs - <%- nomePagina%> </title>
+    <link rel="stylesheet" href="https://necolas.githud.io/normalize.css/
+    8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,
+    900| Staatliches" rel="stylesheet">
+    <link rel="stylesheet" href="/css/trix.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <header class="site-header contenedor">
+        <a href="/">
+            <img src="/img/logo.png" alt="Logo WeUs">
+        </a>
+
+        <nav class="nav">
+            <a href="#">Criar Grupo</a>
+            <a href="/iniciar-sessao">Iniciar Sessão</a>
+            <a href="/criar-conta">Cadastre-se</a>
+        </nav>
+    </header>
+
+    <% if (locals.mensajes) { %>
+        <% const categoria = Object.keys(locals.mensajes) %>
+        <% if(categoria.length) { %>
+            <% locals.mensajes[categoria].forEach(alerta => { %>
+                <div class="alertas">
+                    <p class="alerta <%= categoria %>"> <%= alerta %></p>
+                </div>
+            <% }) %>    
+        <% } %>    
+    <% } %>
+
+    <%- body %>
+
+    <footer class="site-footer contenedor">
+        <nav class="nav">
+            <a href="#">Criar Grupo</a>
+            <a href="/iniciar-sessao">Iniciar Sessão</a>
+            <a href="/criar-conta">Cadastre-se</a>
+        </nav>
+
+        <p class="copyright">Todos os direitos reservados WeUs <%- year %> &copy;</p>
+    </footer>
+
+    <script src="/js/trix.js"></script>
+    
+</body>
+</html>
