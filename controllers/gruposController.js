@@ -14,17 +14,17 @@ exports.formNovoGrupo = async (req, res) => {
 exports.criarGrupo = async (req, res) => {
     const grupo = req.body;
     //Ver as informacoes dos grupos
-    //console.log(grupo);
+    console.log(grupo);
 
-    try {
-        //Salvar na db
-        await Grupos.create(grupo);
-        req.flash('exito', 'O grupo foi criado com sucesso');
-        res.redirect('/administracao');
-    } catch (error) {
-        console.log(error);
-        req.flash('error', error);
-        res.redirect('/novo-grupo');
+    // try {
+    //     //Salvar na db
+    //     await Grupos.create(grupo);
+    //     req.flash('exito', 'O grupo foi criado com sucesso');
+    //     res.redirect('/administracao');
+    // } catch (error) {
+    //     console.log(error);
+    //     req.flash('error', error);
+    //     res.redirect('/novo-grupo');
         
-    }
+    // }
 }
