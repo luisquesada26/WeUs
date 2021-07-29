@@ -37,7 +37,7 @@ const grupos = db.define('grupos', {
     imagem: Sequelize.TEXT
 })
 
-Grupos.belongsTo(Categorias);
-Grupos.belongsTo(Usuarios);
+grupos.belongsTo(Categorias);
+grupos.belongsTo(Usuarios);
 
-module.exports = Grupos;
+module.exports = grupos;
