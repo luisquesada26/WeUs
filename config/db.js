@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 
 module.exports = new Sequelize('weus', 'postgres', 'Totidiversidade', {
-    host: '127.0.0.1',
+    host: 'localhost',
     port: '5432',
     dialect: 'postgres',
     pool:{
